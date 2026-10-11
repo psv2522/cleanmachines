@@ -1,0 +1,221 @@
+.detail-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--surface);
+  border-left: 1px solid var(--rule);
+}
+
+.detail-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-4) var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--rule);
+}
+
+.detail-panel__title {
+  min-width: 0;
+}
+
+.detail-panel__title h2 {
+  font-size: var(--text-lg);
+  font-weight: 650;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.detail-panel__title h2:focus {
+  outline: none;
+}
+
+.detail-panel__title h2:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.detail-panel__subtitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-1);
+  color: var(--ink-muted);
+}
+
+.detail-panel__close {
+  flex: none;
+  gap: var(--space-2);
+}
+
+.detail-panel__close svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.detail-panel__body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: var(--space-4) var(--space-5) var(--space-6);
+  overscroll-behavior: contain;
+}
+
+.detail-panel__loading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-5) 0 var(--space-3);
+  color: var(--ink-muted);
+}
+
+.skeleton-block {
+  height: 7rem;
+  margin-bottom: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+}
+
+.skeleton-block--short {
+  height: 4rem;
+}
+
+.detail-meta {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.detail-meta > div {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: baseline;
+}
+
+.detail-meta dt {
+  color: var(--ink-muted);
+}
+
+.detail-meta dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.detail-meta__id {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+}
+
+.detail-meta__secondary {
+  display: block;
+  color: var(--ink-muted);
+  font-size: var(--text-sm);
+}
+
+.detail-section {
+  margin-top: var(--space-5);
+}
+
+.detail-section h3 {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-md);
+  font-weight: 650;
+}
+
+.detail-section__hint {
+  color: var(--ink-muted);
+}
+
+.outcome {
+  margin-bottom: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-weight: 600;
+}
+
+.outcome--blocked {
+  border-color: var(--blocked);
+  background: var(--blocked-tint);
+}
+
+.outcome--error {
+  border-color: var(--error);
+  background: var(--error-tint);
+}
+
+.rule-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rule-list li {
+  padding: 0.125rem var(--space-2);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+.rule-list li[data-blocking] {
+  border-color: var(--blocked);
+  color: var(--blocked);
+  font-weight: 600;
+}
+
+.json-view {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+}
+
+.json-view__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-1) var(--space-1) var(--space-1) var(--space-3);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: var(--text-sm);
+}
+
+.json-view__code {
+  max-height: 22rem;
+  margin: 0;
+  padding: var(--space-3);
+  overflow: auto;
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.json-view__more {
+  margin: 0 var(--space-3) var(--space-3);
+}
+
+.json-key {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.json-string {
+  color: var(--json-string);
+}
+
+.json-number {
+  color: var(--json-number);
+}
+
+.json-literal {
+  color: var(--json-literal);
+}

@@ -1,0 +1,25 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 600;
+}
+
+.status-badge--ok {
+  color: var(--ok);
+}
+
+.status-badge--blocked {
+  color: var(--blocked);
+}
+
+.status-badge--error {
+  color: var(--error);
+}
+
+.status-glyph {
+  flex: none;
+  width: 0.7em;
+  height: 0.7em;
+  fill: currentColor;
+}
