@@ -2,6 +2,7 @@
   font-family: 'IBM Plex Sans';
   src: url('../fonts/ibm-plex-sans.woff2') format('woff2');
   font-weight: 400 700;
+  font-display: swap;
 }
 
 :root {
@@ -35,8 +36,10 @@ body {
   top: 0;
   left: 0;
   height: 3px;
-  width: 0;
+  width: 100%;
   background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
   z-index: 20;
 }
 
@@ -98,6 +101,7 @@ main {
 .hero-image {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 .hero-copy {
@@ -124,6 +128,7 @@ main {
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface);
+  container-type: inline-size;
 }
 
 .alerts-track {
@@ -143,10 +148,17 @@ main {
 
 @keyframes alerts-scroll {
   from {
-    left: 100%;
+    transform: translateX(0);
   }
   to {
-    left: -120%;
+    transform: translateX(-220cqw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alerts-track {
+    left: 16px;
+    animation: none;
   }
 }
 
@@ -169,7 +181,6 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 16px;
-  align-items: start;
 }
 
 .agent-card {
@@ -177,10 +188,12 @@ main {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--surface);
+  min-height: 220px;
 }
 
 .agent-avatar {
   width: 48px;
+  height: 48px;
   border-radius: 12px;
 }
 
@@ -244,9 +257,8 @@ main {
 }
 
 .result-row.in-focus {
-  padding-left: 13px;
-  border-left: 3px solid var(--accent);
   background: var(--surface-raised);
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 .result-time,
@@ -278,6 +290,8 @@ main {
 
 .row-preview {
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 30;
   max-width: 320px;
   padding: 8px 12px;
@@ -316,6 +330,7 @@ main {
   right: 24px;
   z-index: 15;
   width: 340px;
+  max-height: calc(100vh - 120px);
   overflow: auto;
   border: 1px solid var(--border);
   border-radius: 12px;
